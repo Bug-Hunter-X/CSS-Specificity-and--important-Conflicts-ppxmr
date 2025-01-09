@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an issue related to specificity and cascading: 
+
+```css
+div p {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+The intended behavior might be for all paragraphs within divs to be blue, and all other paragraphs to be red. However, due to CSS specificity rules, the `p { color: red; }` rule will override the `div p { color: blue; }` rule because the selector `p` is more specific for an element that is not nested in a `div` element.  This leads to unexpected behavior if the developer assumes that the nested rule would take precedence.
+
+Another problem may be related to the use of important!
+
+```css
+div p {
+  color: blue !important;
+}
+p {
+  color: red !important;
+}
+```
+
+In this case, both rules use !important, leading to a conflict that is often difficult to debug.
