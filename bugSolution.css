@@ -1,0 +1,12 @@
+The solution involves properly understanding CSS specificity and avoiding `!important` where possible:
+
+```css
+div p {
+  color: blue;
+}
+.other p {
+  color: red;
+}
+```
+
+Here, the paragraph within the div will be blue. We use a class `.other` for the other paragraphs. This approach is more maintainable and readable than using `!important`.
